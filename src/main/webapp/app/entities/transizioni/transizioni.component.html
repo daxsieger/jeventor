@@ -1,0 +1,82 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jeventorApp.transizioni.home.title">Transizionis</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-transizioni" [routerLink]="['/transizioni/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="jeventorApp.transizioni.home.createLabel">
+            Create new Transizioni
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="transizionis">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="idTransizione"><span jhiTranslate="jeventorApp.transizioni.idTransizione">Id Transizione</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="dsTransizione"><span jhiTranslate="jeventorApp.transizioni.dsTransizione">Ds Transizione</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="processo.id"><span jhiTranslate="jeventorApp.transizioni.processo">Processo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="stadioIniziale.id"><span jhiTranslate="jeventorApp.transizioni.stadioIniziale">Stadio Iniziale</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="stadioFinale.id"><span jhiTranslate="jeventorApp.transizioni.stadioFinale">Stadio Finale</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let transizioni of transizionis ;trackBy: trackId">
+                <td><a [routerLink]="['/transizioni', transizioni.id, 'view' ]">{{transizioni.id}}</a></td>
+                <td>{{transizioni.idTransizione}}</td>
+                <td>{{transizioni.dsTransizione}}</td>
+                <td>
+                    <div *ngIf="transizioni.processo">
+                        <a [routerLink]="['../processo', transizioni.processo?.id, 'view' ]" >{{transizioni.processo?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="transizioni.stadioIniziale">
+                        <a [routerLink]="['../stadio', transizioni.stadioIniziale?.id, 'view' ]" >{{transizioni.stadioIniziale?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="transizioni.stadioFinale">
+                        <a [routerLink]="['../stadio', transizioni.stadioFinale?.id, 'view' ]" >{{transizioni.stadioFinale?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/transizioni', transizioni.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/transizioni', transizioni.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'transizioni/'+ transizioni.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="transizionis && transizionis.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

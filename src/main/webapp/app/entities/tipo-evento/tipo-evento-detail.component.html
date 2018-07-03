@@ -1,0 +1,31 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="tipoEvento">
+            <h2><span jhiTranslate="jeventorApp.tipoEvento.detail.title">Tipo Evento</span> {{tipoEvento.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jeventorApp.tipoEvento.idTipoEvento">Id Tipo Evento</span></dt>
+                <dd>
+                    <span>{{tipoEvento.idTipoEvento}}</span>
+                </dd>
+                <dt><span jhiTranslate="jeventorApp.tipoEvento.dsTipoEvento">Ds Tipo Evento</span></dt>
+                <dd>
+                    <span>{{tipoEvento.dsTipoEvento}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/tipo-evento', tipoEvento.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+
+{
+    "jeventorApp": {
+        "produttore" : {
+            "home": {
+                "title": "Produttores",
+                "createLabel": "Genera un nuovo Produttore",
+                "createOrEditLabel": "Genera o modifica un Produttore"
+            },
+            "created": "&Egrave; stato generato un nuovo Produttore con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Produttore identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Produttore con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Produttore {{ id }}?"
+            },
+            "detail": {
+                "title": "Produttore"
+            },
+            "idProduttore": "Id Produttore",
+            "dsProduttore": "Ds Produttore"
+        }
+    }
+}

@@ -1,0 +1,22 @@
+
+{
+    "jeventorApp": {
+        "assistito" : {
+            "home": {
+                "title": "Assistitos",
+                "createLabel": "Genera un nuovo Assistito",
+                "createOrEditLabel": "Genera o modifica un Assistito"
+            },
+            "created": "&Egrave; stato generato un nuovo Assistito con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Assistito identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Assistito con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Assistito {{ id }}?"
+            },
+            "detail": {
+                "title": "Assistito"
+            },
+            "idAssistito": "Id Assistito"
+        }
+    }
+}

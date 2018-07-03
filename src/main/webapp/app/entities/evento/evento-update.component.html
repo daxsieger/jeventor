@@ -1,0 +1,75 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-evento-heading" jhiTranslate="jeventorApp.evento.home.createOrEditLabel">Create or edit a Evento</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!evento.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="evento.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jeventorApp.evento.idEvento" for="field_idEvento">Id Evento</label>
+                    <input type="number" class="form-control" name="idEvento" id="field_idEvento"
+                        [(ngModel)]="evento.idEvento" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jeventorApp.evento.tsEvento" for="field_tsEvento">Ts Evento</label>
+                    <div class="d-flex">
+                        <input id="field_tsEvento" type="datetime-local" class="form-control" name="tsEvento" [(ngModel)]="tsEvento"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jeventorApp.evento.note" for="field_note">Note</label>
+                    <input type="text" class="form-control" name="note" id="field_note"
+                        [(ngModel)]="evento.note" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jeventorApp.evento.assistito" for="field_assistito">Assistito</label>
+                    <select class="form-control" id="field_assistito" name="assistito" [(ngModel)]="evento.assistito">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="assistitoOption.id === evento.assistito?.id ? evento.assistito : assistitoOption" *ngFor="let assistitoOption of assistitos; trackBy: trackAssistitoById">{{assistitoOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jeventorApp.evento.tipo" for="field_tipo">Tipo</label>
+                    <select class="form-control" id="field_tipo" name="tipo" [(ngModel)]="evento.tipo">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="tipoEventoOption.id === evento.tipo?.id ? evento.tipo : tipoEventoOption" *ngFor="let tipoEventoOption of tipos; trackBy: trackTipoEventoById">{{tipoEventoOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jeventorApp.evento.gestore" for="field_gestore">Gestore</label>
+                    <select class="form-control" id="field_gestore" name="gestore" [(ngModel)]="evento.gestore">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="gestoreOption.id === evento.gestore?.id ? evento.gestore : gestoreOption" *ngFor="let gestoreOption of gestores; trackBy: trackGestoreById">{{gestoreOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jeventorApp.evento.origine" for="field_origine">Origine</label>
+                    <select class="form-control" id="field_origine" name="origine" [(ngModel)]="evento.origine" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="produttoreOption.id === evento.origine?.id ? evento.origine : produttoreOption" *ngFor="let produttoreOption of produttores; trackBy: trackProduttoreById">{{produttoreOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label jhiTranslate="jeventorApp.evento.stati" for="field_stati">Stati</label>
+                    <select class="form-control" id="field_stati" multiple name="stati" [(ngModel)]="evento.statis">
+                        <option [ngValue]="getSelected(evento.statis, statoOption)" *ngFor="let statoOption of statoes; trackBy: trackStatoById">{{statoOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

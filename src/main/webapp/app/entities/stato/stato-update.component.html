@@ -1,0 +1,48 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-stato-heading" jhiTranslate="jeventorApp.stato.home.createOrEditLabel">Create or edit a Stato</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!stato.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="stato.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jeventorApp.stato.idStadio" for="field_idStadio">Id Stadio</label>
+                    <input type="number" class="form-control" name="idStadio" id="field_idStadio"
+                        [(ngModel)]="stato.idStadio" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jeventorApp.stato.dsStadio" for="field_dsStadio">Ds Stadio</label>
+                    <input type="text" class="form-control" name="dsStadio" id="field_dsStadio"
+                        [(ngModel)]="stato.dsStadio" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jeventorApp.stato.tsCambioStato" for="field_tsCambioStato">Ts Cambio Stato</label>
+                    <div class="d-flex">
+                        <input id="field_tsCambioStato" type="datetime-local" class="form-control" name="tsCambioStato" [(ngModel)]="tsCambioStato"
+                        />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jeventorApp.stato.stadio" for="field_stadio">Stadio</label>
+                    <select class="form-control" id="field_stadio" name="stadio" [(ngModel)]="stato.stadio">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="stadioOption.id === stato.stadio?.id ? stato.stadio : stadioOption" *ngFor="let stadioOption of stadios; trackBy: trackStadioById">{{stadioOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

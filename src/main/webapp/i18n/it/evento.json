@@ -1,0 +1,29 @@
+
+{
+    "jeventorApp": {
+        "evento" : {
+            "home": {
+                "title": "Eventos",
+                "createLabel": "Genera un nuovo Evento",
+                "createOrEditLabel": "Genera o modifica un Evento"
+            },
+            "created": "&Egrave; stato generato un nuovo Evento con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Evento identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Evento con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Evento {{ id }}?"
+            },
+            "detail": {
+                "title": "Evento"
+            },
+            "idEvento": "Id Evento",
+            "tsEvento": "Ts Evento",
+            "note": "Note",
+            "assistito": "Assistito",
+            "tipo": "Tipo",
+            "gestore": "Gestore",
+            "origine": "Origine",
+            "stati": "Stati"
+        }
+    }
+}

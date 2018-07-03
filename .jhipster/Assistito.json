@@ -1,0 +1,19 @@
+{
+    "name": "Assistito",
+    "fields": [
+        {
+            "fieldName": "idAssistito",
+            "fieldType": "Long"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20180703162553",
+    "entityTableName": "assistito",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

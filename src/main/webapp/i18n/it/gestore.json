@@ -1,0 +1,22 @@
+
+{
+    "jeventorApp": {
+        "gestore" : {
+            "home": {
+                "title": "Gestores",
+                "createLabel": "Genera un nuovo Gestore",
+                "createOrEditLabel": "Genera o modifica un Gestore"
+            },
+            "created": "&Egrave; stato generato un nuovo Gestore con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Gestore identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Gestore con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Gestore {{ id }}?"
+            },
+            "detail": {
+                "title": "Gestore"
+            },
+            "idGestore": "Id Gestore"
+        }
+    }
+}
