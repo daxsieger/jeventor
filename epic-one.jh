@@ -1,0 +1,91 @@
+
+entity Evento {
+	id_evento Long,
+    data_ora_evento TimeStamp,
+    note String,
+}
+
+entity Assistito {
+	id_assistito Long
+}
+
+entity Gestore {
+	id_gestore Long
+}
+
+entity TipoEvento {
+	id_tipo_evento Long,
+    ds_tipo_evento String
+}
+
+entity Produttore {
+	id_produttore Long,
+    ds_produttore String
+}
+
+entity StatoProcesso {
+	id_stadio Long,
+    ds_stadio String,
+    data_ora_cambio_stato TimeStamp
+}
+
+
+entity StadioProcessamento {
+	id_stadio Long,
+    ds_stadio String
+}
+
+entity Processo {
+	id_processo Long,
+    ds_processo String
+}
+
+entity Transizioni {
+	id_transizione Long,
+    ds_transizione String
+}
+
+// defining multiple oneToOne relationships
+relationship OneToOne {
+	Evento{assistito} to Assistito
+}
+
+relationship OneToOne {
+	Evento{tipo} to TipoEvento
+}
+
+relationship OneToOne {
+	Evento{gestore} to Gestore
+}
+
+relationship OneToOne {
+	StatoProcesso{stadio} to StadioProcessamento
+}
+
+relationship ManyToOne {
+	Transizioni{processo} to Processo
+    StadioProcessamento{processo} to Processo
+}
+
+relationship ManyToOne {
+	Transizioni{stadioIniziale} to StadioProcessamento
+	Transizioni{stadioFinale} to StadioProcessamento
+}
+
+relationship ManyToMany {
+	Evento{stati} to StatoProcesso{eventi}
+}
+
+relationship ManyToOne {
+	Evento{origine} to Produttore
+}
+
+// Set pagination options
+paginate Evento, Assistito, Gestore, StatoProcesso with infinite-scroll
+paginate StadioProcessamento, Processo, Transizioni, Produttore with pagination
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
