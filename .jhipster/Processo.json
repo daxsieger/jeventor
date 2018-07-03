@@ -1,0 +1,23 @@
+{
+    "name": "Processo",
+    "fields": [
+        {
+            "fieldName": "idProcesso",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "dsProcesso",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20180703162327",
+    "entityTableName": "processo",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
