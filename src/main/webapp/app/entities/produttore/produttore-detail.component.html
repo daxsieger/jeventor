@@ -1,0 +1,31 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="produttore">
+            <h2><span jhiTranslate="jeventorApp.produttore.detail.title">Produttore</span> {{produttore.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jeventorApp.produttore.idProduttore">Id Produttore</span></dt>
+                <dd>
+                    <span>{{produttore.idProduttore}}</span>
+                </dd>
+                <dt><span jhiTranslate="jeventorApp.produttore.dsProduttore">Ds Produttore</span></dt>
+                <dd>
+                    <span>{{produttore.dsProduttore}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/produttore', produttore.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

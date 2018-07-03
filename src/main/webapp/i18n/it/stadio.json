@@ -1,0 +1,24 @@
+
+{
+    "jeventorApp": {
+        "stadio" : {
+            "home": {
+                "title": "Stadios",
+                "createLabel": "Genera un nuovo Stadio",
+                "createOrEditLabel": "Genera o modifica un Stadio"
+            },
+            "created": "&Egrave; stato generato un nuovo Stadio con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Stadio identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Stadio con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Stadio {{ id }}?"
+            },
+            "detail": {
+                "title": "Stadio"
+            },
+            "idStadio": "Id Stadio",
+            "dsStadio": "Ds Stadio",
+            "processo": "Processo"
+        }
+    }
+}

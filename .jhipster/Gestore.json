@@ -1,0 +1,19 @@
+{
+    "name": "Gestore",
+    "fields": [
+        {
+            "fieldName": "idGestore",
+            "fieldType": "Long"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20180703162554",
+    "entityTableName": "gestore",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

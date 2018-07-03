@@ -1,0 +1,24 @@
+
+{
+    "jeventorApp": {
+        "stadio" : {
+            "home": {
+                "title": "Stadios",
+                "createLabel": "Create a new Stadio",
+                "createOrEditLabel": "Create or edit a Stadio"
+            },
+            "created": "A new Stadio is created with identifier {{ param }}",
+            "updated": "A Stadio is updated with identifier {{ param }}",
+            "deleted": "A Stadio is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Stadio {{ id }}?"
+            },
+            "detail": {
+                "title": "Stadio"
+            },
+            "idStadio": "Id Stadio",
+            "dsStadio": "Ds Stadio",
+            "processo": "Processo"
+        }
+    }
+}

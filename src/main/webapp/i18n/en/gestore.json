@@ -1,0 +1,22 @@
+
+{
+    "jeventorApp": {
+        "gestore" : {
+            "home": {
+                "title": "Gestores",
+                "createLabel": "Create a new Gestore",
+                "createOrEditLabel": "Create or edit a Gestore"
+            },
+            "created": "A new Gestore is created with identifier {{ param }}",
+            "updated": "A Gestore is updated with identifier {{ param }}",
+            "deleted": "A Gestore is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Gestore {{ id }}?"
+            },
+            "detail": {
+                "title": "Gestore"
+            },
+            "idGestore": "Id Gestore"
+        }
+    }
+}

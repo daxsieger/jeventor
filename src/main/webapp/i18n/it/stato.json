@@ -1,0 +1,26 @@
+
+{
+    "jeventorApp": {
+        "stato" : {
+            "home": {
+                "title": "Statoes",
+                "createLabel": "Genera un nuovo Stato",
+                "createOrEditLabel": "Genera o modifica un Stato"
+            },
+            "created": "&Egrave; stato generato un nuovo Stato con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Stato identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Stato con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Stato {{ id }}?"
+            },
+            "detail": {
+                "title": "Stato"
+            },
+            "idStadio": "Id Stadio",
+            "dsStadio": "Ds Stadio",
+            "tsCambioStato": "Ts Cambio Stato",
+            "stadio": "Stadio",
+            "eventi": "Eventi"
+        }
+    }
+}

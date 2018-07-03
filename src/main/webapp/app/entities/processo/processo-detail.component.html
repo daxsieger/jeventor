@@ -1,0 +1,31 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="processo">
+            <h2><span jhiTranslate="jeventorApp.processo.detail.title">Processo</span> {{processo.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jeventorApp.processo.idProcesso">Id Processo</span></dt>
+                <dd>
+                    <span>{{processo.idProcesso}}</span>
+                </dd>
+                <dt><span jhiTranslate="jeventorApp.processo.dsProcesso">Ds Processo</span></dt>
+                <dd>
+                    <span>{{processo.dsProcesso}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/processo', processo.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

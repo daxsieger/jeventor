@@ -1,0 +1,23 @@
+
+{
+    "jeventorApp": {
+        "tipoEvento" : {
+            "home": {
+                "title": "TipoEventos",
+                "createLabel": "Genera un nuovo Tipo Evento",
+                "createOrEditLabel": "Genera o modifica un Tipo Evento"
+            },
+            "created": "&Egrave; stato generato un nuovo Tipo Evento con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Tipo Evento identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Tipo Evento con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Tipo Evento {{ id }}?"
+            },
+            "detail": {
+                "title": "Tipo Evento"
+            },
+            "idTipoEvento": "Id Tipo Evento",
+            "dsTipoEvento": "Ds Tipo Evento"
+        }
+    }
+}

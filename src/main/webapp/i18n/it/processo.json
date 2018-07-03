@@ -1,0 +1,23 @@
+
+{
+    "jeventorApp": {
+        "processo" : {
+            "home": {
+                "title": "Processos",
+                "createLabel": "Genera un nuovo Processo",
+                "createOrEditLabel": "Genera o modifica un Processo"
+            },
+            "created": "&Egrave; stato generato un nuovo Processo con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Processo identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Processo con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Processo {{ id }}?"
+            },
+            "detail": {
+                "title": "Processo"
+            },
+            "idProcesso": "Id Processo",
+            "dsProcesso": "Ds Processo"
+        }
+    }
+}

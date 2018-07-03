@@ -1,0 +1,26 @@
+
+{
+    "jeventorApp": {
+        "transizioni" : {
+            "home": {
+                "title": "Transizionis",
+                "createLabel": "Genera un nuovo Transizioni",
+                "createOrEditLabel": "Genera o modifica un Transizioni"
+            },
+            "created": "&Egrave; stato generato un nuovo Transizioni con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Transizioni identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Transizioni con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Transizioni {{ id }}?"
+            },
+            "detail": {
+                "title": "Transizioni"
+            },
+            "idTransizione": "Id Transizione",
+            "dsTransizione": "Ds Transizione",
+            "processo": "Processo",
+            "stadioIniziale": "Stadio Iniziale",
+            "stadioFinale": "Stadio Finale"
+        }
+    }
+}

@@ -1,0 +1,22 @@
+
+{
+    "jeventorApp": {
+        "assistito" : {
+            "home": {
+                "title": "Assistitos",
+                "createLabel": "Create a new Assistito",
+                "createOrEditLabel": "Create or edit a Assistito"
+            },
+            "created": "A new Assistito is created with identifier {{ param }}",
+            "updated": "A Assistito is updated with identifier {{ param }}",
+            "deleted": "A Assistito is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Assistito {{ id }}?"
+            },
+            "detail": {
+                "title": "Assistito"
+            },
+            "idAssistito": "Id Assistito"
+        }
+    }
+}
